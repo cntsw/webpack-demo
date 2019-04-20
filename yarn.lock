@@ -5595,6 +5595,11 @@ xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
+xterm@^3:
+  version "3.12.2"
+  resolved "http://registry.npm.taobao.org/xterm/download/xterm-3.12.2.tgz#ec8563857c7b098973bab4dbf537f1a7c6a790c8"
+  integrity sha1-7IVjhXx7CYlzurTb9Tfxp8ankMg=
+
 y18n@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
