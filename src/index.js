@@ -43,8 +43,20 @@ const term = new Terminal({
 });
 term.open(document.getElementById('container-shell'));
 
+// generate websocket url
+const loc = window.location;
+const protocal = (loc.protocol === 'http:' ? 'ws:' : 'wss:');
+const {
+  project, env, name,
+} = window.wsArgs;
+let { host } = window.wsArgs;
+host = host || loc.host;
+
+const wsUrl = `${protocal}//${host}/api/ws/pods-terminal?project=${project}&env=${env}&name=${name}`;
+console.log(wsUrl);
+
 let zsentry;
-const ws = new WebSocket('ws://192.168.4.25:8080/xterm');
+const ws = new WebSocket(wsUrl);
 ws.binaryType = 'arraybuffer';
 
 ws.onmessage = (event) => {
@@ -64,7 +76,7 @@ ws.onmessage = (event) => {
 
   zsentry.consume(new Uint8Array(event.data));
 
-//   term.write(String.fromCharCode(...rawData));
+  //   term.write(String.fromCharCode(...rawData));
 };
 
 const encoder = new TextEncoder();
