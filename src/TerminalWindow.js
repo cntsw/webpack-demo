@@ -173,7 +173,7 @@ function createTerminalWindow(wsUrl) {
 
   zsentry = new Zmodem.Sentry({
     to_terminal: (octets) => {
-      term.write(String.fromCharCode(...octets));
+      term.write(fromUTF8Array(new Uint8Array(octets)));
     },
 
     sender: (octets) => {

@@ -1,4 +1,6 @@
 export default function fromUTF8Array(data) {
+  // https://gist.github.com/joni/3760795/8f0c1a608b7f0c8b3978db68105c5b1d741d0446
+
   let str = '';
   let i;
 
